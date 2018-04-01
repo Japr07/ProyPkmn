@@ -1,0 +1,19 @@
+{
+  "name": "proypok",
+  "version": "0.0.4",
+  "description": "",
+  "main": "Servidor.js",
+  "scripts": {
+    "start": "nodemon server/servidor.js"
+  },
+  "keywords": [],
+  "author": "Japr07",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}

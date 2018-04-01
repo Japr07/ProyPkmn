@@ -1,0 +1,44 @@
+# OS X
+.DS_Store
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+
+# Emacs
+*.*~
+*.#
+.#*
+*#
+
+# Vim
+.*.sw[a-z]
+*.un~i
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ/WebStorm
+*.iml
+
+# NPM packages folder.
+node_modules/
+bower_components/
+
+# Vagrant
+.vagrant/
+
+# OS or Editor folders
+.cache
+.project
+.settings
+.tmproj
+.idea
+nbproject
+
+# Visual Studio Code
+.vscode/
