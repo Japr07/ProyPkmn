@@ -2,72 +2,71 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Pokémon Online</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/css.css">
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="libs/jquery-3.3.1.min.js"></script>
-  <script src="libs/popper.min.js"></script>
-  <script src="libs/bootstrap.min.js"></script>
-  <script src="libs/phaser.min.js"></script>
-  <script src="js/motor.js"></script>
-  <script src="js/chat.js"></script>
-  <script src="js/sockets.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/pokedex.js"></script>
+    <meta charset="utf-8">
+    <title>Pokémon Online</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="libs/jquery-3.3.1.min.js"></script>
+    <script src="libs/popper.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
+    <script src="libs/phaser.min.js"></script>
+
 </head>
 
 <body>
-  <div class="container">
-    <center>
-      <div class="card text-white bg-dark">
-        <img src="img/logo.png" width="15%" height="15%" alt="">
-        <h5 class="card-header">Pokemon Online</h5>
-        <div class="card-body">
-          <h1>ALPHA 0.0.4
-            <small>dev: Japr07</small>
-          </h1>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col">
-          <div class="card text-white bg-dark">
-            <h5 class="card-header">Juego</h5>
-            <div class="card-body">
-              <div id="juego"></div>
+    <div class="container">
+        <center>
+            <div class="card text-white bg-dark">
+                <img src="img/logo.png" width="15%" height="15%" alt="">
+                <h5 class="card-header">Pokemon Online</h5>
+                <div class="card-body">
+                    <h1>ALPHA 0.0.5
+                        <small>dev: Japr07</small>
+                    </h1>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card text-white bg-dark">
-            <h5 class="card-header">Chat</h5>
-            <div class="card-body">
-              <div id="chat"></div>
-              <form class="input-group" id="chat-enviar" autocomplete="off">
-                <input id="chat-mensaje" type="text" class="form-control input-lg" placeholder="Escribe un mensaje">
-                <span class="input-group-btn">
-                  <button class="btn btn-outline-primary" type="submit">Enviar</button>
-                </span>
-              </form>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="card text-white bg-dark">
+                        <h5 class="card-header">Juego</h5>
+                        <div class="card-body">
+                            <div id="juego"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="chat2">
+                    <div class="card text-white bg-dark">
+                        <h5 class="card-header">Chat</h5>
+                        <div class="card-body">
+                            <div id="chat"></div>
+                            <form class="input-group" id="chat-enviar" autocomplete="off">
+                                <input id="chat-mensaje" type="text" class="form-control input-lg" placeholder="Escribe un mensaje">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-outline-primary" type="submit">Enviar</button>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </center>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="card text-white bg-dark">
+                    <h5 class="card-header" align="center">Changelogs</h5>
+                    <div class="card-body" id="Changelogs">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </center>
-    <br>
-    <div class="row">
-      <div class="col">
-        <div class="card text-white bg-dark">
-          <h5 class="card-header" align="center">Changelogs</h5>
-          <div class="card-body" id="Changelogs">
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <br>
+    <br>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pokedex.js"></script>
+    <script src="js/motor.js"></script>
 </body>
 
 </html>

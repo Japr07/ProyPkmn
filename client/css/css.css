@@ -1,16 +1,23 @@
 body {
-    background-color: #346b77;
+  background-color: #346b77;
 }
 
 #chat {
   position: relative;
   width: 100%;
   float: left;
-  min-height: 100%;
-  height: 448px;
+  height: 568px;
   overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 20px;
 }
-#Changelogs{
+
+#chat2 {
+  max-width: 348px;
+}
+
+#Changelogs {
   position: relative;
   width: 100%;
   float: left;
