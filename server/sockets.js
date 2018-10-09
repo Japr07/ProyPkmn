@@ -21,10 +21,10 @@
                 playerId: socket.id
             };
             // enviar el nuevo player
-            socket.emit('currentPlayers', players);
+            socket.emit('players', players);
             
             // actualizar a los demas players conectados sobre el nuevo player
-            socket.broadcast.emit('newPlayer', players[socket.id]);
+            socket.broadcast.emit('nuevoPlayer', players[socket.id]);
 
             // sacar al player que se ha desconectado de la lista de player
             socket.on('disconnect', function () {
@@ -35,12 +35,12 @@
             });
 
             // actualizar la posicion del player a los demas cuando se mueva
-            socket.on('playerMovement', movementData => {
+            socket.on('movimientoPlayer', movementData => {
                 players[socket.id].x = movementData.x;
                 players[socket.id].y = movementData.y;
                 players[socket.id].animacion = movementData.animacion;
                 // emitir el mensaje que el player se ha movido a todos los player en la lista
-                io.sockets.emit('playerMoved', players[socket.id]);
+                io.sockets.emit('playerMovido', players[socket.id]);
             });
         });
     }

@@ -33,7 +33,7 @@ function create() {
     var self = this;
     this.socket = io();
     this.otrosPlayers = this.physics.add.group();
-    this.socket.on('currentPlayers', function (players) {
+    this.socket.on('players', function (players) {
         Object.keys(players).forEach(function (id) {
             if (players[id].playerId === self.socket.id) {
                 agregarPlayer(self, players[id]);
@@ -42,10 +42,10 @@ function create() {
             }
         });
     });
-    this.socket.on('newPlayer', function (playerInfo) {
+    this.socket.on('nuevoPlayer', function (playerInfo) {
         agregarOtrosPlayers(self, playerInfo);
     });
-    this.socket.on('playerMoved', function (playerInfo) {
+    this.socket.on('playerMovido', function (playerInfo) {
         self.otrosPlayers.getChildren().forEach(function (otroPlayer) {
             if (playerInfo.playerId === otroPlayer.playerId) {
                 otroPlayer.setPosition(playerInfo.x, playerInfo.y);
@@ -212,7 +212,7 @@ function update() {
         var x = this.player.x;
         var y = this.player.y;
         if (this.player.oldPosition && (x !== this.player.oldPosition.x || y !== this.player.oldPosition.y)) {
-            this.socket.emit('playerMovement', {
+            this.socket.emit('movimientoPlayer', {
                 x: this.player.x,
                 y: this.player.y,
                 animacion: this.player.animacion
