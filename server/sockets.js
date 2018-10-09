@@ -14,32 +14,32 @@
                 io.sockets.emit('nuevoMensaje', mensajes);
             });
             /////////////JUEGO/////////////
-            // crear un nuevo jugador
+            // crear un nuevo jugadory agregarlo a una lista
             players[socket.id] = {
                 x: Math.floor(Math.random() * 700) + 50,
                 y: Math.floor(Math.random() * 500) + 50,
                 playerId: socket.id
             };
-            // send the players object to the new player
+            // enviar el nuevo player
             socket.emit('currentPlayers', players);
             
-            // update all other players of the new player
+            // actualizar a los demas players conectados sobre el nuevo player
             socket.broadcast.emit('newPlayer', players[socket.id]);
 
-            // when a player disconnects, remove them from our players object
+            // sacar al player que se ha desconectado de la lista de player
             socket.on('disconnect', function () {
                 console.log('user disconnected: ', socket.id);
                 delete players[socket.id];
-                // emit a message to all players to remove this player
+                // emitir un mensaje a todos los player de la lista sobre el player que se desconecto
                 io.emit('disconnect', socket.id);
             });
 
-            // when a player moves, update the player data
+            // actualizar la posicion del player a los demas cuando se mueva
             socket.on('playerMovement', movementData => {
                 players[socket.id].x = movementData.x;
                 players[socket.id].y = movementData.y;
                 players[socket.id].animacion = movementData.animacion;
-                // emit a message to all players about the player that moved
+                // emitir el mensaje que el player se ha movido a todos los player en la lista
                 io.sockets.emit('playerMoved', players[socket.id]);
             });
         });

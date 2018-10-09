@@ -208,7 +208,7 @@ function update() {
                 activo: false
             };
         }
-        // emit player movement
+        // emitir que el player se esta moviendo
         var x = this.player.x;
         var y = this.player.y;
         if (this.player.oldPosition && (x !== this.player.oldPosition.x || y !== this.player.oldPosition.y)) {
@@ -219,7 +219,7 @@ function update() {
             });
 
         }
-        // save old position data
+        // guardar la ultima posicion del player
         this.player.oldPosition = {
             x: this.player.x,
             y: this.player.y
